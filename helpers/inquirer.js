@@ -1,6 +1,6 @@
 
-import inquire from 'inquirer';
-import colors from 'colors';
+const inquire = require('inquirer');
+require('colors');
 
 const preguntapausa = [
     {
@@ -68,7 +68,7 @@ const pausa = async() =>{
 
 }
 
-export {
+module.exports = {
     inquirerMenu,
     pausa
-}
+};

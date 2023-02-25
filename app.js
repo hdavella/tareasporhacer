@@ -1,8 +1,4 @@
-//require('colors');
-//const { mostrarMenu, pausa } = require('./helpers/mensajes');
-//import colors from 'colors';
-
-import { inquirerMenu, pausa } from './helpers/inquirer.js';
+const { inquirerMenu, pausa } = require('./helpers/inquirer');
 
 
 //console.clear();
