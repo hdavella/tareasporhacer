@@ -42,7 +42,7 @@ const pausa = () => {
       output: process.stdout,
     });
   
-    ReadLine.question(`presione ${'ENTER'.bold.green} para continuar...`, (opt) => {
+    ReadLine.question(`presione ${'ENTER'.blink.green} para continuar...`, (opt) => {
       ReadLine.close();
       resolve();
     });
