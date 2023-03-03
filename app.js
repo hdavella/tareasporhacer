@@ -1,4 +1,4 @@
-const { inquirerMenu, pausa } = require('./helpers/inquirer');
+const { inquirerMenu, pausa, seleccionMenu } = require('./helpers/inquirer');
 const Tarea = require('./models/tarea');
 const Tareas = require('./models/tareas');
 
@@ -9,7 +9,7 @@ const main = async () => {
 
     let opt = '';
     const tareas = new Tareas();
-    
+
     do {
         /*      const tareas = new Tareas();
                 const tarea = new Tarea('Pinta soporte');
@@ -19,9 +19,17 @@ const main = async () => {
                 console.log (tareas) */
 
         opt = await inquirerMenu();
-        console.log({ opt });
+        //console.log(opt);
+        switch (opt) {
+            case '1':
+                tareas.agregarTarea(await seleccionMenu('Ingrese nombre de la Tarea'));
+                break;
 
+            case '2':
+                console.log(tareas._listado)
 
+                break;
+        }
 
         if (opt !== '0') await pausa();
 
