@@ -1,5 +1,5 @@
 const fs = require('fs');
-const archivo = './db/data,json';
+const archivo = './db/data.json';
 
 const guardarDb = (tarea) => {
 
@@ -8,6 +8,14 @@ const guardarDb = (tarea) => {
 }
 
 const leerDb = ()=>{
+
+    if( !fs.existsSync ){
+        return null;
+    }else{
+        const infoTarea = JSON.parse(fs.readFileSync(archivo, {encoding: 'utf-8'}));
+        console.log(infoTarea);
+        return null;
+    };
 
 }
 
