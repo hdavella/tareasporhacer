@@ -36,9 +36,9 @@ const main = async () => {
         // La dejo comentada porque sino pisa el archivo de tareas o la db mas adelante
         //guardarDb(tareas.listadoArrTareas);
 
-        if (opt !== '0') await pausa();
+        if (opt !== '7') await pausa();
 
-    } while (opt !== '0')
+    } while (opt !== '7')
 }
 
 main();
