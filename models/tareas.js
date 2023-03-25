@@ -1,6 +1,5 @@
 const Tarea = require("./tarea");
 
-
 class Tareas {
 
     _listado = {};
@@ -11,7 +10,6 @@ class Tareas {
         Object.keys(this._listado).forEach( (key)=>{
             listado.push(this._listado[key]);
         });
-
 
         return listado;
     }
