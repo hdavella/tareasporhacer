@@ -33,7 +33,7 @@ const main = async () => {
                 break;
         }
         
-        // La dejo comentada porque sino pisa el archivo de tarea
+        // La dejo comentada porque sino pisa el archivo de tareas o la db mas adelante
         //guardarDb(tareas.listadoArrTareas);
 
         if (opt !== '0') await pausa();
