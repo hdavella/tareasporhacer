@@ -3,9 +3,6 @@ const { inquirerMenu, pausa, seleccionMenu } = require('./helpers/inquirer');
 const Tarea = require('./models/tarea');
 const Tareas = require('./models/tareas');
 
-
-//console.clear();
-
 const main = async () => {
 
     let opt = '';
@@ -35,12 +32,13 @@ const main = async () => {
 
                 break;
         }
-
+        
+        // La dejo comentada porque sino pisa el archivo de tareas o la db mas adelante
         //guardarDb(tareas.listadoArrTareas);
 
-        if (opt !== '0') await pausa();
+        if (opt !== '7') await pausa();
 
-    } while (opt !== '0')
+    } while (opt !== '7')
 }
 
 main();
