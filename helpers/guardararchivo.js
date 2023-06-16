@@ -9,12 +9,11 @@ const guardarDb = (tarea) => {
 
 const leerDb = ()=>{
 
-    if( !fs.existsSync ){
+    if( !fs.existsSync(archivo) ){
         return null;
     }else{
         const infoTarea = JSON.parse(fs.readFileSync(archivo, {encoding: 'utf-8'}));
-        console.log(infoTarea);
-        return null;
+        return infoTarea;
     };
 
 }

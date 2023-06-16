@@ -19,6 +19,10 @@ class Tareas {
         this._listado={};
     }
 
+    setTareas( tareas=[] ){
+        
+    }
+
     agregarTarea( desc= '' ){
         const tarea = new Tarea(desc);
         this._listado[tarea.id] = tarea;
