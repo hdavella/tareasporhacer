@@ -19,8 +19,12 @@ class Tareas {
         this._listado={};
     }
 
-    setTareas( tareas=[] ){
-        
+    cargarTareasFromArray( tareas=[] ){
+
+        tareas.forEach( tarea => {
+            this._listado[tarea.id] = tarea;
+        });
+
     }
 
     agregarTarea( desc= '' ){

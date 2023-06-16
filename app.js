@@ -9,8 +9,8 @@ const main = async () => {
     const tareas = new Tareas();
 
     const leolaDb = leerDb();
-    leolaDb ? console.log(leolaDb) : console.log("Sin tareas por hacer")
-    await pausa();
+
+    if (leolaDb) tareas.cargarTareasFromArray(leolaDb);
 
     do {
         /*      const tareas = new Tareas();
@@ -28,14 +28,12 @@ const main = async () => {
                 break;
 
             case '2':
-                console.log(tareas._listado)
                 console.log(tareas.listadoArrTareas);
 
                 break;
         }
         
-        // La dejo comentada porque sino pisa el archivo de tareas o la db mas adelante
-        //guardarDb(tareas.listadoArrTareas);
+        guardarDb(tareas.listadoArrTareas);
 
         if (opt !== '7') await pausa();
 
