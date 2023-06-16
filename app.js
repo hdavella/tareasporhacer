@@ -9,6 +9,7 @@ const main = async () => {
     const tareas = new Tareas();
 
     const leolaDb = leerDb();
+    leolaDb ? console.log(leolaDb) : console.log("Sin tareas por hacer")
     await pausa();
 
     do {
