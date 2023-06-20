@@ -37,8 +37,9 @@ class Tareas {
         this.listadoArrTareas.forEach( (tarea, i) => {
 
             const idx = i+1;
-            const {desc, completadoEn}=tarea;
-            console.log(`${idx}`.green + ' Tarea: ' + `${desc}`.blue + ' :: ' + completadoEn);
+            const {desc, completadoEn} = tarea;
+            const estado = (!completadoEn) ? "Pendiente".green : "Completado".red
+            console.log(`${idx}`.green + ' Tarea: ' + `${desc}`.blue + ' :: ' + estado);
 
         })
         
