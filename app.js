@@ -21,14 +21,15 @@ const main = async () => {
                 console.log (tareas) */
 
         opt = await inquirerMenu();
-        //console.log(opt);
+
         switch (opt) {
             case '1':
                 tareas.agregarTarea(await seleccionMenu('Ingrese nombre de la Tarea'));
                 break;
 
             case '2':
-                console.log(tareas.listadoArrTareas);
+                //console.log(tareas.listadoArrTareas);
+                tareas.printListTasks();
 
                 break;
         }

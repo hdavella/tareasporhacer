@@ -31,6 +31,18 @@ class Tareas {
         const tarea = new Tarea(desc);
         this._listado[tarea.id] = tarea;
     }
+
+    printListTasks(){
+
+        this.listadoArrTareas.forEach( (tarea, i) => {
+
+            const idx = i+1;
+            const {desc, completadoEn}=tarea;
+            console.log(`${idx}`.green + ' Tarea: ' + `${desc}`.blue + ' :: ' + completadoEn);
+
+        })
+        
+    }
 }
 
 module.exports = Tareas;
