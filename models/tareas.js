@@ -38,11 +38,31 @@ class Tareas {
 
             const idx = i+1;
             const {desc, completadoEn} = tarea;
-            const estado = (!completadoEn) ? "Pendiente".green : "Completado".red
+            const estado = (!completadoEn) ? "Pendiente".red : "Completado".green
             console.log(`${idx}`.green + ' Tarea: ' + `${desc}`.blue + ' :: ' + estado);
 
-        })
+        })  
         
+    }
+
+    printCompletedTasks(){
+
+        this.listadoArrTareas.forEach( (tarea, i) => {
+
+            const idx = i+1;
+            const {desc, completadoEn} = tarea;
+            (!completadoEn) ? "Pendiente".red : console.log(`${idx}`.green + ' Tarea: ' + `${desc}`.blue + ' :: ' + "Completado".green);
+         })  
+    }
+
+    printInCompletedTasks(){
+
+        this.listadoArrTareas.forEach( (tarea, i) => {
+
+            const idx = i+1;
+            const {desc, completadoEn} = tarea;
+            (!completadoEn) ? console.log(`${idx}`.green + ' Tarea: ' + `${desc}`.blue + ' :: ' + "Completado".red) : "Completado".green;
+         })  
     }
 }
 

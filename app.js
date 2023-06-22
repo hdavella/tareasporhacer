@@ -28,9 +28,15 @@ const main = async () => {
                 break;
 
             case '2':
-                //console.log(tareas.listadoArrTareas);
                 tareas.printListTasks();
-
+                break;
+            
+            case '3':
+                tareas.printCompletedTasks();
+                break;
+            
+            case '4':
+                tareas.printInCompletedTasks();
                 break;
         }
         
