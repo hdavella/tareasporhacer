@@ -46,22 +46,20 @@ class Tareas {
     }
 
     printCompletedTasks(){
-
-        this.listadoArrTareas.forEach( (tarea, i) => {
-
-            const idx = i+1;
+        console.log();
+        let idx = 0;
+        this.listadoArrTareas.forEach( tarea => {
             const {desc, completadoEn} = tarea;
-            (!completadoEn) ? "Pendiente".red : console.log(`${idx}`.green + ' Tarea: ' + `${desc}`.blue + ' :: ' + "Completado".green);
+            (!completadoEn) ? "Pendiente".red : console.log(`${idx += 1}`.green + ' Tarea: ' + `${desc}`.blue + ' :: ' + completadoEn);
          })  
     }
 
     printInCompletedTasks(){
-
-        this.listadoArrTareas.forEach( (tarea, i) => {
-
-            const idx = i+1;
+        console.log();
+        let idx = 0;
+        this.listadoArrTareas.forEach( (tarea) => {
             const {desc, completadoEn} = tarea;
-            (!completadoEn) ? console.log(`${idx}`.green + ' Tarea: ' + `${desc}`.blue + ' :: ' + "Completado".red) : "Completado".green;
+            (!completadoEn) ? console.log(`${idx += 1}`.green + ' Tarea: ' + `${desc}`.blue + ' :: ' + "Incompleto".red) : "Completado".green;
          })  
     }
 }
