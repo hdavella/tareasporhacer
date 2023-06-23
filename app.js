@@ -1,5 +1,5 @@
 const { guardarDb, leerDb } = require('./helpers/guardararchivo');
-const { inquirerMenu, pausa, seleccionMenu } = require('./helpers/inquirer');
+const { inquirerMenu, pausa, seleccionMenu, listTaskToDelete, confirm } = require('./helpers/inquirer');
 const Tarea = require('./models/tarea');
 const Tareas = require('./models/tareas');
 
@@ -25,19 +25,27 @@ const main = async () => {
         switch (opt) {
             case '1':
                 tareas.agregarTarea(await seleccionMenu('Ingrese nombre de la Tarea'));
-                break;
+            break;
 
             case '2':
                 tareas.printListTasks();
-                break;
+            break;
             
             case '3':
                 tareas.printCompletedTasks();
-                break;
+            break;
             
             case '4':
                 tareas.printInCompletedTasks();
+            break;
+
+            case '6':
+                const id = await listTaskToDelete( tareas.listadoArrTareas);
+                console.log({id});
+                const ok = await confirm("Estas seguro?: ");
+                ok ? tareas.deleteTask(id) : '';
                 break;
+
         }
         
         guardarDb(tareas.listadoArrTareas);

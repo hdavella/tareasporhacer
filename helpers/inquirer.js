@@ -12,8 +12,6 @@ const preguntaPausa = [
     }
 ];
 
-
-
 const preguntas = [
     {
         type: 'list',
@@ -69,7 +67,7 @@ const pausa = async () => {
 
     return await inquire.prompt(preguntaPausa);
 
-}
+};
 
 const seleccionMenu = async (mensajeAmostrar) => {
 
@@ -90,10 +88,51 @@ const seleccionMenu = async (mensajeAmostrar) => {
 
     const { descripcion } = await inquire.prompt(mensaje);
     return descripcion;
+};
+
+const listTaskToDelete = async(tasks = []) => {
+
+    const choices = tasks.map( (tarea, i) => {
+
+        const idx = `${i+1}`.green;
+        const id = tarea.id;
+        const desc = tarea.desc;
+        return {value: id, name: `${idx} ${desc} .`.green};        
+
+    });
+
+    //console.log(choices);
+    
+    const menuTaskToDelete = [
+        {
+            type: 'list',
+            name: 'id',
+            message: "Borar",
+            choices
+        }
+    ];
+
+    const { id } = await inquire.prompt(menuTaskToDelete);
+    return id;
+};
+
+const confirm = async (message) => {
+
+    const menuConfirm = [{
+        type: "confirm",
+        name: "ok",
+        message
+    }];
+
+    const {ok} = await inquire.prompt(menuConfirm);
+    return ok;
+
 }
 
 module.exports = {
     inquirerMenu,
     pausa,
-    seleccionMenu
+    seleccionMenu,
+    listTaskToDelete,
+    confirm
 };
